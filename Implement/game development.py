@@ -12,17 +12,17 @@
 
 n, m = map(int, input().split())
 
+# 방문 위치를 확인하기 위한 배열 선언
+d = [[0] * m for _ in range(n)]
+
 x, y, direction = map(int, input().split())
+
+# 현재 위치 방문 등록
+d[x][y] = 1
 
 array = []
 for i in range(n):
     array.append(list(map(int, input().split())))
-
-# 방문 위치를 확인하기 위한 배열 선언
-d = [[0] * m for _ in range(n)]
-
-# 현재 위치 방문 등록
-d[x][y] = 1
 
 dx = [-1, 0, 1, 0]
 dy = [0, 1, 0, -1]
@@ -42,12 +42,13 @@ while True:
     nx = x + dx[direction]
     ny = y + dy[direction]
     if d[nx][ny] == 0 and array[nx][ny] == 0:
-        d[nx][ny] == 1
-        x == nx
-        y == ny
+        d[nx][ny] = 1
+        x = nx
+        y = ny
         count += 1
         turn_count = 0
         continue
+
     else:
         turn_count += 1
 
@@ -58,6 +59,7 @@ while True:
         if array[nx][ny] == 0:
             x = nx
             y = ny
+
         else:
             break
         turn_count = 0
