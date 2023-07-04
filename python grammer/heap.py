@@ -1,4 +1,8 @@
 import heapq
+import time
+
+#측정 시작
+start_time = time.time()
 
 # 최소 힙
 def heapsort(iterable):
@@ -17,6 +21,12 @@ def heapsort(iterable):
 result = heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0])
 
 print(result)
+
+#측정 종료
+end_time = time.time()
+
+#수행 시간 출력
+print(f"time : {end_time - start_time}")
 
 # 최대 힙
 def heapsort2(iterable):
