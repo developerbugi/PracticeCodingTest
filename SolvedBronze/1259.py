@@ -16,9 +16,6 @@ while True:
     if array[len(array)-1] == 0:
         break
 
-
-
-
 count_yes = []
 
 for a in array[0:len(array)-1]:
